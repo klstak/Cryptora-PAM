@@ -1,8 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Entypo, MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import WatchListScreen from "../screens/WatchlistScreen";
-import { Entypo, AntDesign } from "@expo/vector-icons";
+import PortfolioScreen from "../screens/PortfolioScreen";
+import AccountScreen from "../screens/AccountScreen";
+import RewardScreen from "../screens/RewardScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,10 +30,31 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
+        name="Wallet"
+        component={PortfolioScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => <Entypo name="wallet" size={focused ? 30 : 25} color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Reward"
+        component={RewardScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => <MaterialCommunityIcons name="gift" size={focused ? 30 : 25} color={color} />,
+        }}
+      />
+      <Tab.Screen
         name="Watchlist"
         component={WatchListScreen}
         options={{
-          tabBarIcon: ({ focused, color }) => <AntDesign name="staro" size={focused ? 30 : 25} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Entypo name="star" size={focused ? 30 : 25} color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Account"
+        component={AccountScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => <MaterialIcons name="account-circle" size={focused ? 30 : 25} color={color} />,
         }}
       />
     </Tab.Navigator>

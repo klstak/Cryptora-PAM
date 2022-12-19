@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const PortfolioScreen = () => {
+const AccountScreen = () => {
   return (
     <View>
       <Text>Tes</Text>
@@ -9,4 +9,4 @@ const PortfolioScreen = () => {
   );
 };
 
-export default PortfolioScreen;
+export default AccountScreen;
